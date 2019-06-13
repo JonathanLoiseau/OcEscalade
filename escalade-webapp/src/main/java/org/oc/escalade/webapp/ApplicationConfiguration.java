@@ -15,7 +15,7 @@ public class ApplicationConfiguration {
 static final String JDBC_Driver = "org.postgresql.Driver";
 static final String DB_URL = "jdbc:postgresql://localhost:5432/OcSacalade";
 static final String USER = "postgres";
-static final String PASS = "happyface2";
+static final String PASS = "ocescalade";
 
 
 	
