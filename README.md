@@ -1,2 +1,0 @@
-# OcEscalade
-Site Escalade
