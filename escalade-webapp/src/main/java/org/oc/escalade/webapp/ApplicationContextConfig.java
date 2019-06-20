@@ -6,13 +6,17 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
  
 @Configuration
- 
+@EnableWebMvc 
 @ComponentScan("org.oc.escalade.webapp.controler")
-public class ApplicationContextConfig {
+public class ApplicationContextConfig implements WebMvcConfigurer {
  
    @Bean(name = "viewResolver")
    public InternalResourceViewResolver getViewResolver() {
@@ -35,5 +39,8 @@ public class ApplicationContextConfig {
        return resolver;
    }
     
+   public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+       registry.addResourceHandler("/resources/**").addResourceLocations("/resources/css","/resources/image");
+   }
  
 }

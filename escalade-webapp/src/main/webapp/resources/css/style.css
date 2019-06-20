@@ -1,0 +1,123 @@
+body{
+	background: url('../image/fond_site.jpg');
+	color:black;
+}
+
+#blocPage{
+	width: 100%;
+	margin: auto;
+}
+
+header h1{
+	text-transform: uppercase;
+
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+}
+
+nav ul{
+	list-style-type:none; 
+	display: flex;
+	font-weight: bold;
+
+	
+}
+
+nav li{
+	margin-right: 1em;
+	font-size: 1.3em;
+
+}
+
+#logo
+{
+    display: flex;
+    flex-direction:column;
+    align-items: baseline;
+
+    
+}
+
+ h2{
+	font-style: italic; 
+	font-size:2.5em;
+	color: red;
+
+}
+
+header a{
+	text-decoration: none;
+	color: rgb(200, 125, 102)
+}
+nav a:hover
+{
+border-bottom: 2px solid black;
+
+ color: blue;
+	}
+	
+
+fieldset{
+		display: flex;
+		
+	}
+	.h3Account{
+		text-align: center;
+		padding: 70px 0px 0px 0px; 
+	}
+	.Accountfield{
+		display: block;
+		margin: 0px 0px 40px 0px;
+		
+	}
+	.Accountmail{
+		margin: 0px 0px 40px 0px;
+	}
+	.Validez{
+		display: block;
+		margin:auto;
+
+	}
+	.h3TopoCrea{
+		text-align: center;
+		padding: 70px 0px 0px 0px;
+		font-size: 2em;
+	}
+	.shareOrFind{
+		display: flex;
+		flex-direction: row;
+		align-items:flex-end;
+		justify-content: space-around;
+		padding: 12em 0em 0em 0em;
+		font-size: 25px;
+
+	}
+
+	#conteneurFind{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+	}
+	
+	#conteneurShare{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+	}
+	.h3SiteShare{
+		text-align: center;
+		margin: 3em 0em 2em 0em;
+		font-size: 2em;
+		font-style: italic;
+	}
+	.CommentShareField{
+		margin: 0.5em 0em 0.5em 0em
+	}
+	.buttonValidershare{
+		margin: auto;
+	}

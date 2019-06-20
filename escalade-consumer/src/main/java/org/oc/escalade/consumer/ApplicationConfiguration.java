@@ -19,8 +19,6 @@
 		static final String USER = "postgres";
 		static final String PASS = "ocescalade";
 
-
-
 		
 		@Bean
 		public DataSource PostGreDataSource() {

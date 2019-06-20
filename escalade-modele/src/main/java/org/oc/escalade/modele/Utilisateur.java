@@ -5,6 +5,9 @@ public class Utilisateur {
 	private String name;
 	private String username;
 	private String password;
+	private String birthPlace;
+	private String sex;
+	private String birthDate;
 	private int id;
 	
 	public Utilisateur() {
@@ -50,6 +53,30 @@ public class Utilisateur {
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+	public synchronized String getBirthPlace() {
+		return birthPlace;
+	}
+
+	public synchronized void setBirthPlace(String birthPlace) {
+		this.birthPlace = birthPlace;
+	}
+
+	public synchronized String getSex() {
+		return sex;
+	}
+
+	public synchronized void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public synchronized String getBirthDate() {
+		return birthDate;
+	}
+
+	public synchronized void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	@Override
 	public String toString() {
 		return "Utilisateur [firstname=" + firstname + ", name=" + name + ", username=" + username + ", password="

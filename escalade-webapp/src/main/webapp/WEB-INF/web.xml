@@ -4,5 +4,11 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
 
    <display-name>OC Escalade</display-name>
+   <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/pages/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
 
 </web-app>
