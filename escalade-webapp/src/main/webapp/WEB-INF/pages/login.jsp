@@ -6,19 +6,20 @@
     </head>
     <body>
     <%@ include file= "menu.jsp" %>
-        <h2>Saissisez vos identifiants</h2>
-        <form:form method="POST"
+    
+    <c:if test="${ log.equals(false) }" var = "notlog">Identifiant ou mot de passe incorrect<br/></c:if>
+     <form:form method="POST"
           action="/escalade-webapp/displayUser" modelAttribute="Utilisateur">
              <table>
              
               <tr>
-                    <td><form:label path="username">username</form:label></td>
-                    <td><form:input path="username"/></td>
+                    <td><form:label path="id">id</form:label></td>
+                    <td><form:input path="id" placeholder ="ex1234"/></td>
                 </tr>
                 
                 <tr>
                     <td><form:label path="password">password</form:label></td>
-                    <td><form:input path="password"/></td>
+                    <td><form:input path="password" placeholder ="ex123456" /></td>
                 </tr>
                
                 
@@ -27,5 +28,8 @@
                 </tr>
             </table>
         </form:form>
+    
+    
+        
     </body>
 </html>

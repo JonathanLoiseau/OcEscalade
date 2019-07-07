@@ -1,6 +1,11 @@
 package org.oc.escalade.webapp.controler;
 
+import org.oc.escalade.business.interf.UtilService;
+import org.oc.escalade.consumer.impl.ApplicationConfiguration;
 import org.oc.escalade.modele.Utilisateur;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,6 +19,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Controller
 @EnableWebMvc
 public class ControlerLogin {
+	 
+	AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+	UtilService utilservice=(UtilService)context.getBean("utilService");
+	
 
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public ModelAndView showForm() {
@@ -28,9 +37,26 @@ public class ControlerLogin {
         if (result.hasErrors()) {
             return "error";}
         
-        model.addAttribute("password", utilisateur.getPassword());
-        model.addAttribute("username",utilisateur.getUsername());
-        return"displayUser";
+       // model.addAttribute("password", utilisateur.getPassword());
+       // model.addAttribute("username",utilisateur.getId());
+        
+       try { Utilisateur user =utilservice.findUtil(utilisateur.getId());
+        model.addAttribute("username",user.getUsername());
+        model.addAttribute("password",user.getPassword());
+        System.out.println("Aurevoir");
+        return"displayUser"; 
+       	} catch(EmptyResultDataAccessException e) {
+       		model.addAttribute("log",false);
+       		utilisateur= new Utilisateur();
+       				System.out.println("bonjour");
+       		return " login";
+       		
+       	}
+       	
+        
+       
         }
 	
 }
+	
+

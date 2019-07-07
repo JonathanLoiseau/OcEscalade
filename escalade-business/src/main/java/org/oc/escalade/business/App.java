@@ -2,7 +2,9 @@ package org.oc.escalade.business;
 
 import java.util.List;
 
-import org.oc.escalade.consumer.ApplicationConfiguration;
+import org.oc.escalade.business.interf.UtilService;
+import org.oc.escalade.business.interf.VoieService;
+import org.oc.escalade.consumer.impl.ApplicationConfiguration;
 import org.oc.escalade.modele.Utilisateur;
 import org.oc.escalade.modele.Voie;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,13 +27,14 @@ public class App
 //    	utilService.deleteUtil(5);
 //    	List<Utilisateur> userList =  utilService.findAll();
 //    	System.out.println(userList.size());
-//    	Utilisateur user = utilService.findUtil(1);
+    	Utilisateur user = utilService.findUtil(1);
 //    	
     	VoieService voieService = (VoieService)context.getBean("voieService");
     	Voie voie = voieService.findVoie(1);
 //    	Voie voieVarap= new Voie("varapace",20,"5c",5,2);
 //    	voieService.addVoie(voieVarap);
     	System.out.println(voie);
+    	System.out.println(user.getUsername());
 //    	System.out.println(user);
     	//List<Voie> listVoie=voieService.findAll();
     	//System.out.println(listVoie.size());

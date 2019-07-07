@@ -2,6 +2,8 @@ package org.oc.escalade.consumer;
 
 import java.util.List;
 
+import org.oc.escalade.consumer.impl.ApplicationConfiguration;
+import org.oc.escalade.consumer.interf.DaoVoie;
 import org.oc.escalade.modele.Utilisateur;
 import org.oc.escalade.modele.Voie;
 import org.springframework.context.ApplicationContext;

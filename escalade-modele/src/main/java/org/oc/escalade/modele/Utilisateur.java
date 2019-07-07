@@ -9,6 +9,7 @@ public class Utilisateur {
 	private String sex;
 	private String birthDate;
 	private int id;
+	private boolean log;
 	
 	public Utilisateur() {
 		
@@ -75,6 +76,14 @@ public class Utilisateur {
 
 	public synchronized void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public synchronized boolean isLog() {
+		return log;
+	}
+
+	public synchronized void setLog(boolean log) {
+		this.log = log;
 	}
 
 	@Override
