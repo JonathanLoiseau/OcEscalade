@@ -28,7 +28,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
 
 	@Override
 	public List<Utilisateur> findAll(){
-		List<Utilisateur> users = jdbcTemplate.query("select*from \"OcEscalade\".\"Utilisateur\"",
+		List<Utilisateur> users = jdbcTemplate.query("select * from Utilisateur",
 				new BeanPropertyRowMapper(Utilisateur.class) );
 		return users;
 	}
@@ -36,7 +36,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
 
 	@Override
 	public Utilisateur findUtil( int UtilId) {
-		Utilisateur util = (Utilisateur) jdbcTemplate.queryForObject ("Select* from \"OcEscalade\".\"Utilisateur\" where id = ? ",
+		Utilisateur util = (Utilisateur) jdbcTemplate.queryForObject ("select * from Utilisateur where id = ? ",
 				new Object [] {UtilId},
 				new BeanPropertyRowMapper(Utilisateur.class));
 		return util;
@@ -45,7 +45,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
 
 	@Override
 	public void addUtil(Utilisateur util) {
-		jdbcTemplate.update("insert into \"OcEscalade\".\"Utilisateur\" (name,firstname,username,password)\r\n" + 
+		jdbcTemplate.update("insert into Utilisateur (name,firstname,username,password)\r\n" + 
 				"values (?,?,?,?);", util.getName(),util.getFirstname(),util.getUsername(),util.getPassword());
 		
 	}
@@ -53,7 +53,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
 
 	@Override
 	public void editUtil(Utilisateur util,int id) {
-		jdbcTemplate.update("update \"OcEscalade\".\"Utilisateur\" set name = ?,firstname = ?,username = ?,password=? where id = ?"
+		jdbcTemplate.update("update Utilisateur set name = ?,firstname = ?,username = ?,password=? where id = ?"
 		,util.getName(),util.getFirstname(),util.getUsername(),util.getPassword(),id);
 		
 	}
@@ -61,7 +61,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
 
 	@Override
 	public void deleteUtil(int id) {
-		jdbcTemplate.update("delete from \"OcEscalade\".\"Utilisateur\" where id = ?", id);
+		jdbcTemplate.update("delete from Utilisateur where id = ?", id);
 		
 	}
 	
